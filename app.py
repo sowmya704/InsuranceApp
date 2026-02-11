@@ -3,12 +3,12 @@ import numpy as np
 import pickle
 
 # Load model
-with open("new_RFmodel.pkl", "rb") as f:
+with open("New_RFmodel.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Load scaler if used
 try:
-    with open("new_scalar.pkl", "rb") as f:
+    with open("New_scalar.pkl", "rb") as f:
         scaler = pickle.load(f)
 except:
     scaler = None
@@ -52,3 +52,4 @@ if scaler:
 if st.button("Predict Insurance Cost"):
     prediction = model.predict(input_data)
     st.success(f"Estimated Insurance Cost: ₹ {prediction[0]:,.2f}")
+
